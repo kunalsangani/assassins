@@ -26,10 +26,10 @@ app.post('/reply', function(req, res){
 	var resp = new twilio.TwimlResponse();
 
 	console.log(req.body);
-	console.log('From: ' + req.body.from);
-	console.log('Body: ' + req.body.body);
+	console.log('From: ' + req.body.From);
+	console.log('Body: ' + req.body.Body);
 
-	resp.message(req.body.from + ' sent ' + req.body.body);
+	resp.message(req.body.From + ' sent ' + req.body.Body);
 	resp.message({to: '+13153825338'}, 'kunal, message received alert');
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
