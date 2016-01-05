@@ -15,14 +15,14 @@ app.get('/', function (req, res) {
 	res.send('Hello World!');
 });
 
-app.get('/communicate', function(req, res){
+app.post('/reply', function(req, res){
 	var resp = new twilio.TwimlResponse();
 
-	console.log(req);
-	console.log('From: ' + req.from);
-	console.log('Body: ' + req.body);
+	console.log(req.body);
+	console.log('From: ' + req.body.from);
+	console.log('Body: ' + req.body.body);
 
-	resp.message(req.from + ' sent ' + req.body);
+	resp.message(req.body.from + ' sent ' + req.body.body);
 	resp.message({to: '+13153825338'}, 'kunal, message received alert');
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
