@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var twilio = require('twilio');
+var bodyParser = require('body-parser');
 
 var TWILIO_ACCOUNT_SID = 'ACc25efa3b90f3685b8f914ca573fd97e5';
 var TWILIO_AUTH_TOKEN = 'd11a4d5ebeaea4e78d65940052db5f37';
@@ -11,6 +12,14 @@ var client = new twilio.RestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended: true
+})); 
+app.use(express.json());
+app.use(express.urlencoded());
+
+
 app.get('/', function (req, res) {
 	res.send('Hello World!');
 });
@@ -19,12 +28,10 @@ app.post('/reply', function(req, res){
 	var resp = new twilio.TwimlResponse();
 
 	console.log(req.body);
-	console.log(req.params);
-	console.log(req.query);
-	console.log('From: ' + req.params.from);
-	console.log('Body: ' + req.params.body);
+	console.log('From: ' + req.body.from);
+	console.log('Body: ' + req.body.body);
 
-	resp.message(req.params.from + ' sent ' + req.params.body);
+	resp.message(req.body.from + ' sent ' + req.body.body);
 	resp.message({to: '+13153825338'}, 'kunal, message received alert');
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
