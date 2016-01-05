@@ -18,7 +18,9 @@ app.get('/', function (req, res) {
 app.post('/reply', function(req, res){
 	var resp = new twilio.TwimlResponse();
 
+	console.log(req.body);
 	console.log(req.params);
+	console.log(req.query);
 	console.log('From: ' + req.params.from);
 	console.log('Body: ' + req.params.body);
 
