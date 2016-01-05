@@ -18,11 +18,11 @@ app.get('/', function (req, res) {
 app.post('/reply', function(req, res){
 	var resp = new twilio.TwimlResponse();
 
-	console.log(req.body);
-	console.log('From: ' + req.body.from);
-	console.log('Body: ' + req.body.body);
+	console.log(req.params);
+	console.log('From: ' + req.params.from);
+	console.log('Body: ' + req.params.body);
 
-	resp.message(req.body.from + ' sent ' + req.body.body);
+	resp.message(req.params.from + ' sent ' + req.params.body);
 	resp.message({to: '+13153825338'}, 'kunal, message received alert');
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
