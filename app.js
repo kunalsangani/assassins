@@ -24,6 +24,31 @@ app.get('/', function (req, res) {
 	res.send('Hello World!');
 });
 
+app.post('/kill_player', function(req, res) {
+	var success = roster.killPlayer(req.body.player_ind)
+	res.end(success);
+});
+
+app.get('/get_full_roster', function(req, res) {
+	var alive_text = '';
+	var killed_text = '';
+	for(var i = 0; i < roster.players.length; i++) {
+		var player = roster.players[i];
+		var descr = '<b>' + i + ': ' + player.first_name + ' ' + player.last_name + '</b><br>';
+		descr += player.phone + '<br>' + player.target + '<br><br>';
+		if(roster.players[i].alive) {
+			alive_text += descr;
+		} else {
+			killed_text += descr;
+		}
+	}
+	res.end(alive_text + '--------------<br><br>' + killed_text);
+	// res.writeHead(200, {
+	// 	'Content-Type': 'application/json'
+	// });
+	// res.json({roster : roster.getFullRoster()});
+});
+
 app.post('/reply', function(req, res){
 	var resp_twiml = new twilio.TwimlResponse();
 
@@ -39,11 +64,12 @@ app.post('/reply', function(req, res){
 		if(message.indexOf('kill') > -1) {
 			var target = roster.lookupPlayerByIndex(sender.target);
 			var response = 'You\'ve assassinated ' + target.first_name + '!\n';
-			roster.killPlayer(sender.target);
+			var success = roster.killPlayer(sender.target);
 			target = roster.lookupPlayerByIndex(sender.target);
 			response += 'Your next target is ' + target.first_name + ' ' + target.last_name + '. ';
 			response += 'There are ' + roster.numPlayersLeft() + ' people left in the game.'
 			resp_twiml.message(response);
+			if(success == 1) resp_twiml.message('Congrats! You won ASSASSINS!');
 		} else if(message.indexOf('status') > -1) {
 			var target = roster.lookupPlayerByIndex(sender.target);
 			var response = 'Your target is ' + target.first_name + ' ' + target.last_name + '. ';

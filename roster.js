@@ -1,252 +1,252 @@
 var players = [
 	{
-		first_name: 'Alonzo-Estrada',
-		last_name: 'Jaysha',
+		last_name: 'Alonzo-Estrada',
+		first_name: 'Jaysha',
 		email: 'jayshaa@stanford.edu',
 		phone: '+18083332613',
 		alive: true
 	},
 	{
-		first_name: 'Blake',
-		last_name: 'Ray',
+		last_name: 'Blake',
+		first_name: 'Ray',
 		email: 'rayblake@stanford.edu',
 		phone: '+14084764526',
 		alive: true
 	},
 	{
-		first_name: 'Blake',
-		last_name: 'Shoney',
+		last_name: 'Blake',
+		first_name: 'Shoney',
 		email: 'shoneyblake@stanford.edu',
 		phone: '+14052099206',
 		alive: true
 	},
 	{
-		first_name: 'Bovee',
-		last_name: 'Griffin',
+		last_name: 'Bovee',
+		first_name: 'Griffin',
 		email: 'gbovee@stanford.edu',
 		phone: '+19162248577',
 		alive: true
 	},
 	{
-		first_name: 'Broad',
-		last_name: 'Nicholas',
+		last_name: 'Broad',
+		first_name: 'Nicholas',
 		email: 'nbroad@stanford.edu',
 		phone: '+14085020208',
 		alive: true
 	},
 	{
-		first_name: 'Buenaflor',
-		last_name: 'John Carlo',
+		last_name: 'Buenaflor',
+		first_name: 'John Carlo',
 		email: 'jcbuena@stanford.edu',
 		phone: '+12138189173029',
 		alive: true
 	},
 	{
-		first_name: 'Chen',
-		last_name: 'Hannah',
+		last_name: 'Chen',
+		first_name: 'Hannah',
 		email: 'hkchen5@stanford.edu',
 		phone: '+15108251627',
 		alive: true
 	},
 	{
-		first_name: 'Chen',
-		last_name: 'Ray',
+		last_name: 'Chen',
+		first_name: 'Ray',
 		email: 'juikang@stanford.edu',
 		phone: '+14088960990',
 		alive: true
 	},
 	{
-		first_name: 'Clark',
-		last_name: 'Josiah',
+		last_name: 'Clark',
+		first_name: 'Josiah',
 		email: 'josiahc@stanford.edu',
 		phone: '+18088964250',
 		alive: true
 	},
 	{
-		first_name: 'Coleman',
-		last_name: 'Emma',
+		last_name: 'Coleman',
+		first_name: 'Emma',
 		email: 'ecolema2@stanford.edu',
 		phone: '+17736201702',
 		alive: true
 	},
 	{
-		first_name: 'DeCastro',
-		last_name: 'Allison',
+		last_name: 'DeCastro',
+		first_name: 'Allison',
 		email: 'agd16@stanford.edu',
 		phone: '+1425444-2624',
 		alive: true
 	},
 	{
-		first_name: 'Eggers',
-		last_name: 'Jessica',
+		last_name: 'Eggers',
+		first_name: 'Jessica',
 		email: 'jeggers3@stanford.edu',
 		phone: '+14066000797',
 		alive: true
 	},
 	{
-		first_name: 'Garcia',
-		last_name: 'Rebekah',
+		last_name: 'Garcia',
+		first_name: 'Rebekah',
 		email: 'ragarcia@stanford.edu',
 		phone: '+15625065277',
 		alive: true
 	},
 	{
-		first_name: 'Gladstone',
-		last_name: 'Lauve',
+		last_name: 'Gladstone',
+		first_name: 'Lauve',
 		email: 'laglad@stanford.edu',
 		phone: '+17035776582',
 		alive: true
 	},
 	{
-		first_name: 'Godbole',
-		last_name: 'Poorwa',
+		last_name: 'Godbole',
+		first_name: 'Poorwa',
 		email: 'pgodbole@stanford.edu',
 		phone: '+17245185699',
 		alive: true
 	},
 	{
-		first_name: 'Grant',
-		last_name: 'Eva',
+		last_name: 'Grant',
+		first_name: 'Eva',
 		email: 'evagrant@stanford.edu',
 		phone: '+12508184811',
 		alive: true
 	},
 	{
-		first_name: 'Hatathlie',
-		last_name: 'Kenaba',
+		last_name: 'Hatathlie',
+		first_name: 'Kenaba',
 		email: 'kenaba@stanford.edu',
 		phone: '+15052155808',
 		alive: true
 	},
 	{
-		first_name: 'Hattori',
-		last_name: 'Matthew',
+		last_name: 'Hattori',
+		first_name: 'Matthew',
 		email: 'mhattori@stanford.edu',
 		phone: '+14084064282',
 		alive: true
 	},
 	{
-		first_name: 'Karrfelt',
-		last_name: 'Filippa',
+		last_name: 'Karrfelt',
+		first_name: 'Filippa',
 		email: 'filippak@stanford.edu',
 		phone: '+16509337247',
 		alive: true
 	},
 	{
-		first_name: 'Kehoe',
-		last_name: 'Emmie',
+		last_name: 'Kehoe',
+		first_name: 'Emmie',
 		email: 'emkehoe@stanford.edu',
 		phone: '+12069141681',
 		alive: true
 	},
 	{
-		first_name: 'Lee',
-		last_name: 'Andrew',
+		last_name: 'Lee',
+		first_name: 'Andrew',
 		email: 'alee16@stanford.edu',
 		phone: '+13154163102',
 		alive: true
 	},
 	{
-		first_name: 'Leonard',
-		last_name: 'Shane',
+		last_name: 'Leonard',
+		first_name: 'Shane',
 		email: 'shanel@stanford.edu',
 		phone: '+17192012530',
 		alive: true
 	},
 	{
-		first_name: 'Lucio',
-		last_name: 'Scott',
+		last_name: 'Lucio',
+		first_name: 'Scott',
 		email: 'slucio@stanford.edu',
 		phone: '+15307613324',
 		alive: true
 	},
 	{
-		first_name: 'McKown',
-		last_name: 'Katelyn',
+		last_name: 'McKown',
+		first_name: 'Katelyn',
 		email: 'kmckown@stanford.edu',
 		phone: '+16268082615',
 		alive: true
 	},
 	{
-		first_name: 'Militante',
-		last_name: 'Jessie',
+		last_name: 'Militante',
+		first_name: 'Jessie',
 		email: 'jmilitan@stanford.edu',
 		phone: '+14088216343',
 		alive: true
 	},
 	{
-		first_name: 'Robinson',
-		last_name: 'Sarah',
+		last_name: 'Robinson',
+		first_name: 'Sarah',
 		email: 'srobins2@stanford.edu',
 		phone: '+16508158840',
 		alive: true
 	},
 	{
-		first_name: 'Rodriguez',
-		last_name: 'Irving',
+		last_name: 'Rodriguez',
+		first_name: 'Irving',
 		email: 'irod973@stanford.edu',
 		phone: '+17085594040',
 		alive: true
 	},
 	{
-		first_name: 'Ruiz',
-		last_name: 'John',
+		last_name: 'Ruiz',
+		first_name: 'John',
 		email: 'johnruiz@stanford.edu',
 		phone: '+19738519125',
 		alive: true
 	},
 	{
-		first_name: 'Salonga',
-		last_name: 'Edward',
+		last_name: 'Salonga',
+		first_name: 'Edward',
 		email: 'esalonga@stanford.edu',
 		phone: '+16504683772',
 		alive: true
 	},
 	{
-		first_name: 'Sangani',
-		last_name: 'Kunal',
+		last_name: 'Sangani',
+		first_name: 'Kunal',
 		email: 'ksangani@stanford.edu',
 		phone: '+13153825338',
 		alive: true
 	},
 	{
-		first_name: 'Smith',
-		last_name: 'Carson',
+		last_name: 'Smith',
+		first_name: 'Carson',
 		email: 'csmith97@stanford.edu',
 		phone: '+17082184704',
 		alive: true
 	},
 	{
-		first_name: 'Tobacco',
-		last_name: 'Jan',
+		last_name: 'Tobacco',
+		first_name: 'Jan',
 		email: 'january@stanford.edu',
 		phone: '+16058992513',
 		alive: true
 	},
 	{
-		first_name: 'Troderman',
-		last_name: 'Joe',
+		last_name: 'Troderman',
+		first_name: 'Joe',
 		email: 'jtrod93@stanford.edu',
 		phone: '+17816368261',
 		alive: true
 	},
 	{
-		first_name: 'Wedekind',
-		last_name: 'Lauren',
+		last_name: 'Wedekind',
+		first_name: 'Lauren',
 		email: 'laurene1@stanford.edu',
 		phone: '+13108096155',
 		alive: true
 	},
 	{
-		first_name: 'Whitfield',
-		last_name: 'Emery',
+		last_name: 'Whitfield',
+		first_name: 'Emery',
 		email: 'emerynez@stanford.edu',
 		phone: '+15055040084',
 		alive: true
 	},
 	{
-		first_name: 'Wright',
-		last_name: 'Lena',
+		last_name: 'Wright',
+		first_name: 'Lena',
 		email: 'tseabbe2@stanford.edu',
 		phone: '+17757414042',
 		alive: true
@@ -275,14 +275,15 @@ var lookupPlayerByIndex = function(player_ind){
 }
 
 var killPlayer = function(player_ind){
+	if(player_ind < 0 || player_ind >= players.length) return -1;
 	players[player_ind].alive = false;
 	for(var i = 0; i < players.length; i++) {
 		if(players[i].target == player_ind)
 			players[i].target = players[player_ind].target;
 	}
 	players[player_ind].target = -1;
-	if(numPlayersLeft() == 1) return true;
-	return false;
+	if(numPlayersLeft() == 1) return 1;
+	return 0;
 }
 
 var numPlayersLeft = function(){
@@ -297,5 +298,6 @@ module.exports = {
 	lookupPlayerByPhone : lookupPlayerByPhone,
 	lookupPlayerByIndex : lookupPlayerByIndex,
 	killPlayer : killPlayer,
-	numPlayersLeft : numPlayersLeft
+	numPlayersLeft : numPlayersLeft,
+	players : players
 };
