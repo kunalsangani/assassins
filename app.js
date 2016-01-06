@@ -9,6 +9,8 @@ var TWILIO_NUMBER = '+13154017343';
 
 var client = new twilio.RestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 
+var COUNT_KILLED = 1;
+
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
@@ -23,14 +25,27 @@ app.get('/', function (req, res) {
 });
 
 app.post('/reply', function(req, res){
-	var resp = new twilio.TwimlResponse();
+	var resp_twiml = new twilio.TwimlResponse();
+	var response = '';
+
+	var sender = req.body.From;
+	var message = req.body.Body.toLowerCase();
+
+	if(message.indexOf('kill') > -1) {
+		response = 'Yay! Your next target is ' + COUNT_KILLED;
+		COUNT_KILLED += 1;
+	} else if(message.indexOf('status') > -1) {
+		response = 'The current # killed is ' + COUNT_KILLED;
+	} else {
+
+	}
 
 	console.log(req.body);
 	console.log('From: ' + req.body.From);
 	console.log('Body: ' + req.body.Body);
 
-	resp.message(req.body.From + ' sent ' + req.body.Body);
-	resp.message({to: '+13153825338'}, 'kunal, message received alert');
+	resp_twiml.message(message);
+	resp_twiml.message({to: '+13153825338'}, 'Message received alert: ' + message);
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
 	});
