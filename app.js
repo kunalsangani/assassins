@@ -2,14 +2,14 @@ var express = require('express');
 var app = express();
 var twilio = require('twilio');
 var bodyParser = require('body-parser');
+var roster = require('./roster')
 
 var TWILIO_ACCOUNT_SID = 'ACc25efa3b90f3685b8f914ca573fd97e5';
 var TWILIO_AUTH_TOKEN = 'd11a4d5ebeaea4e78d65940052db5f37';
 var TWILIO_NUMBER = '+13154017343';
+var ADMIN_NUMBER = '+13153825338';
 
 var client = new twilio.RestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
-
-var COUNT_KILLED = 1;
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
@@ -26,26 +26,39 @@ app.get('/', function (req, res) {
 
 app.post('/reply', function(req, res){
 	var resp_twiml = new twilio.TwimlResponse();
-	var response = '';
 
-	var sender = req.body.From;
+	var sender_number = req.body.From;
 	var message = req.body.Body.toLowerCase();
+	var sender = roster.lookupPlayerByPhone(sender_number);
 
-	if(message.indexOf('kill') > -1) {
-		response = 'Yay! Your next target is ' + COUNT_KILLED;
-		COUNT_KILLED += 1;
-	} else if(message.indexOf('status') > -1) {
-		response = 'The current # killed is ' + COUNT_KILLED;
+	if(sender == undefined) {
+		resp_twiml.message('Sorry, your number is not in the system. Please contact Kunal at 315-382-5338 with any questions.');
+	} else if(!sender.alive) {
+		resp_twiml.message('Sorry, you\'re registered as dead in the game. Please contact Kunal at 315-382-5338 with any questions.');
 	} else {
-		response = 'You can either ask for the current STATUS or say you\'ve KILLed your target';
+		if(message.indexOf('kill') > -1) {
+			var target = roster.lookupPlayerByIndex(sender.target);
+			var response = 'You\'ve assassinated ' + target.first_name + '!\n';
+			roster.killPlayer(sender.target);
+			target = roster.lookupPlayerByIndex(sender.target);
+			response += 'Your next target is ' + target.first_name + ' ' + target.last_name + '. ';
+			response += 'There are ' + roster.numPlayersLeft() + ' people left in the game.'
+			resp_twiml.message(response);
+		} else if(message.indexOf('status') > -1) {
+			var target = roster.lookupPlayerByIndex(sender.target);
+			var response = 'Your target is ' + target.first_name + ' ' + target.last_name + '. ';
+			response += 'There are ' + roster.numPlayersLeft() + ' people left in the game.'
+			resp_twiml.message(response);
+		} else {
+			resp_twiml.message('Text KILL to register that you\'ve assassinated your target, or text STATUS to learn about the current state of the game.');
+		}
 	}
 
-	console.log(req.body);
-	console.log('From: ' + req.body.From);
-	console.log('Body: ' + req.body.Body);
+	var alert = 'Message received from ' + sender_number;
+	if(sender != undefined) alert += ' (' + sender.first_name + ' ' + sender.last_name + ')';
+	alert += ': ' + message;
 
-	resp_twiml.message(message);
-	resp_twiml.message({to: '+13153825338'}, 'Message received alert: ' + message);
+	resp_twiml.message({to: ADMIN_NUMBER}, alert);
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
 	});
