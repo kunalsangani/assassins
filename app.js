@@ -37,7 +37,7 @@ app.post('/reply', function(req, res){
 	} else if(message.indexOf('status') > -1) {
 		response = 'The current # killed is ' + COUNT_KILLED;
 	} else {
-
+		response = 'You can either ask for the current STATUS or say you\'ve KILLed your target';
 	}
 
 	console.log(req.body);
@@ -49,7 +49,7 @@ app.post('/reply', function(req, res){
 	res.writeHead(200, {
 		'Content-Type': 'text/xml'
 	});
-	res.end(resp.toString());
+	res.end(resp_twiml.toString());
 });
 
 var server = app.listen(app.get('port'), function () {
