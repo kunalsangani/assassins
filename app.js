@@ -29,6 +29,11 @@ app.post('/kill_player', function(req, res) {
 	res.end(success);
 });
 
+app.post('/change_phone', function(req, res) {
+	roster.changePhoneNumber(req.body.player_ind, req.body.phone);
+	res.end(1);
+    });
+
 app.get('/get_full_roster', function(req, res) {
 	var alive_text = '';
 	var killed_text = '';

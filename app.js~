@@ -29,6 +29,9 @@ app.post('/kill_player', function(req, res) {
 	res.end(success);
 });
 
+app.post('/change_phone', function(req, res) {
+roster.ch
+
 app.get('/get_full_roster', function(req, res) {
 	var alive_text = '';
 	var killed_text = '';
@@ -56,10 +59,12 @@ app.post('/reply', function(req, res){
 	var message = req.body.Body.toLowerCase();
 	var sender = roster.lookupPlayerByPhone(sender_number);
 
-	if(sender == undefined) {
+	if(sender == undefined || !sender.alive) {
+	    if(sender == undefined) {
 		resp_twiml.message('Sorry, your number is not in the system. Please contact Kunal at 315-382-5338 with any questions.');
-	} else if(!sender.alive) {
+	    } else {
 		resp_twiml.message('Sorry, you\'re registered as dead in the game. Please contact Kunal at 315-382-5338 with any questions.');
+	    }
 	} else {
 		if(message.indexOf('kill') > -1) {
 			var target = roster.lookupPlayerByIndex(sender.target);

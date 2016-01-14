@@ -295,10 +295,17 @@ var numPlayersLeft = function(){
 	return playersLeft;
 }
 
+    var changePhoneNumber = function(player_ind, new_phone){
+	if(player_ind == undefined) return -1;
+	if(player_ind < 0 || player_ind >= players.length) return -1;
+	players[player_ind].phone = new_phone;
+    }
+
 module.exports = {
 	lookupPlayerByPhone : lookupPlayerByPhone,
 	lookupPlayerByIndex : lookupPlayerByIndex,
 	killPlayer : killPlayer,
 	numPlayersLeft : numPlayersLeft,
+	changePhoneNumber : changePhoneNumber,
 	players : players
 };
