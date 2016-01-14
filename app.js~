@@ -56,12 +56,10 @@ app.post('/reply', function(req, res){
 	var message = req.body.Body.toLowerCase();
 	var sender = roster.lookupPlayerByPhone(sender_number);
 
-	if(sender == undefined || !sender.alive) {
-	    if(sender == undefined) {
+	if(sender == undefined) {
 		resp_twiml.message('Sorry, your number is not in the system. Please contact Kunal at 315-382-5338 with any questions.');
-	    } else {
+	} else if(!sender.alive) {
 		resp_twiml.message('Sorry, you\'re registered as dead in the game. Please contact Kunal at 315-382-5338 with any questions.');
-	    }
 	} else {
 		if(message.indexOf('kill') > -1) {
 			var target = roster.lookupPlayerByIndex(sender.target);
