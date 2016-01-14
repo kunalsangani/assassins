@@ -31,7 +31,7 @@ app.post('/kill_player', function(req, res) {
 
 app.post('/change_phone', function(req, res) {
 	roster.changePhoneNumber(req.body.player_ind, req.body.phone);
-	res.end(1);
+	res.end("Successful");
     });
 
 app.get('/get_full_roster', function(req, res) {
