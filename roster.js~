@@ -275,16 +275,15 @@ var lookupPlayerByIndex = function(player_ind){
 }
 
 var killPlayer = function(player_ind){
-    if(player_ind == undefined) return -1;
-    if(player_ind < 0 || player_ind >= players.length) return -1;
-    players[player_ind].alive = false;
-    for(var i = 0; i < players.length; i++) {
-	if(players[i].target == player_ind)
-	    players[i].target = players[player_ind].target;
-    }
-    players[player_ind].target = -1;
-    if(numPlayersLeft() == 1) return 1;
-    return 0;
+	if(player_ind < 0 || player_ind >= players.length) return -1;
+	players[player_ind].alive = false;
+	for(var i = 0; i < players.length; i++) {
+		if(players[i].target == player_ind)
+			players[i].target = players[player_ind].target;
+	}
+	players[player_ind].target = -1;
+	if(numPlayersLeft() == 1) return 1;
+	return 0;
 }
 
 var numPlayersLeft = function(){
