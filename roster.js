@@ -32,7 +32,7 @@ var players = [
 		first_name: 'Nicholas',
 		email: 'nbroad@stanford.edu',
 		phone: '+14085020208',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Buenaflor',
@@ -53,7 +53,7 @@ var players = [
 		first_name: 'Ray',
 		email: 'juikang@stanford.edu',
 		phone: '+14088960990',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Clark',
@@ -95,7 +95,7 @@ var players = [
 		first_name: 'Lauve',
 		email: 'laglad@stanford.edu',
 		phone: '+17035776582',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Godbole',
@@ -109,7 +109,7 @@ var players = [
 		first_name: 'Eva',
 		email: 'evagrant@stanford.edu',
 		phone: '+12508184811',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Hatathlie',
@@ -158,7 +158,7 @@ var players = [
 		first_name: 'Scott',
 		email: 'slucio@stanford.edu',
 		phone: '+15307613324',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'McKown',
