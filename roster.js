@@ -11,21 +11,21 @@ var players = [
 		first_name: 'Ray',
 		email: 'rayblake@stanford.edu',
 		phone: '+14084764526',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Blake',
 		first_name: 'Shoney',
 		email: 'shoneyblake@stanford.edu',
 		phone: '+14052099206',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Bovee',
 		first_name: 'Griffin',
 		email: 'gbovee@stanford.edu',
 		phone: '+19162248577',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Broad',
@@ -39,7 +39,7 @@ var players = [
 		first_name: 'John Carlo',
 		email: 'jcbuena@stanford.edu',
 		phone: '+12138189173029',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Chen',
@@ -60,21 +60,21 @@ var players = [
 		first_name: 'Josiah',
 		email: 'josiahc@stanford.edu',
 		phone: '+18088964250',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Coleman',
 		first_name: 'Emma',
 		email: 'ecolema2@stanford.edu',
 		phone: '+17736201702',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'DeCastro',
 		first_name: 'Allison',
 		email: 'agd16@stanford.edu',
 		phone: '+1425444-2624',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Eggers',
@@ -88,7 +88,7 @@ var players = [
 		first_name: 'Rebekah',
 		email: 'ragarcia@stanford.edu',
 		phone: '+15625065277',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Gladstone',
@@ -116,21 +116,21 @@ var players = [
 		first_name: 'Kenaba',
 		email: 'kenaba@stanford.edu',
 		phone: '+15052155808',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Hattori',
 		first_name: 'Matthew',
 		email: 'mhattori@stanford.edu',
 		phone: '+14084064282',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Karrfelt',
 		first_name: 'Filippa',
 		email: 'filippak@stanford.edu',
 		phone: '+16509337247',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Kehoe',
@@ -144,7 +144,7 @@ var players = [
 		first_name: 'Andrew',
 		email: 'alee16@stanford.edu',
 		phone: '+13154163102',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Leonard',
@@ -172,14 +172,14 @@ var players = [
 		first_name: 'Jessie',
 		email: 'jmilitan@stanford.edu',
 		phone: '+14088216343',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Robinson',
 		first_name: 'Sarah',
 		email: 'srobins2@stanford.edu',
 		phone: '+16508158840',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Rodriguez',
@@ -200,61 +200,92 @@ var players = [
 		first_name: 'Edward',
 		email: 'esalonga@stanford.edu',
 		phone: '+16504683772',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Sangani',
 		first_name: 'Kunal',
 		email: 'ksangani@stanford.edu',
 		phone: '+13153825338',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Smith',
 		first_name: 'Carson',
 		email: 'csmith97@stanford.edu',
 		phone: '+17082184704',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Tobacco',
 		first_name: 'Jan',
 		email: 'january@stanford.edu',
 		phone: '+16058992513',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Troderman',
 		first_name: 'Joe',
 		email: 'jtrod93@stanford.edu',
 		phone: '+17816368261',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Wedekind',
 		first_name: 'Lauren',
 		email: 'laurene1@stanford.edu',
 		phone: '+13108096155',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Whitfield',
 		first_name: 'Emery',
 		email: 'emerynez@stanford.edu',
 		phone: '+15055040084',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Wright',
 		first_name: 'Lena',
 		email: 'tseabbe2@stanford.edu',
 		phone: '+17757414042',
-		alive: true
+		alive: false
 	}
 ];
 
+// var MongoClient = require('mongodb').MongoClient;
+// var assert = require('assert');
+// var ObjectId = require('mongodb').ObjectID;
+// var url = 'mongodb://localhost:27017/players';
+
+// var insertPlayers = function(db, callback) {
+// 	db.collection('players').insertOne(players, function(err, result) {
+// 		assert.equal(err, null);
+// 		console.log('Players inserted into collection.');
+// 		callback(result);
+// 	});
+// }
+
+// var retrievePlayers = function(db, callback) {
+// 	var cursor = db.collection('players').find();
+// 	console.log(cursor);
+// 	console.log(cursor.next());
+// 	cursor.each(function(err, doc) {
+// 		console.log('--X--')
+// 		console.log(doc);
+// 		console.log('----')
+// 	})
+// 	var players_doc = cursor.hasNext() ? cursor.next() : null;
+// 	if(players_doc == null) {
+// 		insertPlayers(db, callback);
+// 	} else {
+// 		callback(players_doc);
+// 	}
+// }
+
 var assignPlayersInitialTargets = function() {
 	var targets = [17, 30, 3, 25, 8, 18, 24, 0, 32, 15, 9, 33, 7, 14, 31, 26, 2, 19, 21, 6, 35, 16, 29, 5, 22, 10, 1, 34, 13, 23, 4, 11, 20, 12, 27, 28];
+	targets = [19, -1, -1, -1, 13, -1, -1, 0, -1, -1, -1, 7, -1, 14, 11, 26, -1, -1, -1, 22, -1, 15, 23, 21, -1, -1, 4, 27, -1, -1, -1, -1, -1, -1, -1, -1];
 	
 	for(var i = 0; i < players.length; i++) {
 		players[i].target = targets[i];
@@ -309,3 +340,12 @@ module.exports = {
 	changePhoneNumber : changePhoneNumber,
 	players : players
 };
+
+// MongoClient.connect(url, function(err, db) {
+// 	assert.equal(null, err);
+// 	console.log('Connected correctly to server.');
+// 	retrievePlayers(db, function(res){
+// 		console.log(res);
+// 	});
+// 	db.close();
+// });
