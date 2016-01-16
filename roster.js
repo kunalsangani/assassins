@@ -46,7 +46,7 @@ var players = [
 		first_name: 'Hannah',
 		email: 'hkchen5@stanford.edu',
 		phone: '+15108251627',
-		alive: true
+		alive: false
 	},
 	{
 		last_name: 'Chen',
